@@ -1,0 +1,15 @@
+{
+  "name": "linux-input-devices",
+  "version": "0.0.1",
+  "description" : "Gets/filters linux input devices",
+  "keywords": ["linux", "bus", "input"],
+  "repository": "github:tetreum/linux-input-devices",
+  "author": "tetreum",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  }
+}
