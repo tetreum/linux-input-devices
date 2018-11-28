@@ -23,7 +23,9 @@ const getDevices = async () => {
             let list = [];
 
             for (let k in file) {
-                list.push(processEntry(file[k]));
+                if (file[k].length > 0) {
+                    list.push(processEntry(file[k]));
+                }
             }
 
             return resolve(list);
@@ -37,8 +39,11 @@ const get = async (attr, val) => {
 
     return new Promise((resolve, reject) => {
         devices.find((entry) => {
+            if (typeof entry[attr] === "undefined") {
+                return reject();
+            }
             if (entry[attr].toLowerCase().indexOf(val) !== -1) {
-                resolve(entry);
+                return resolve(entry);
             }
         });
     });
