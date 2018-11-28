@@ -1,18 +1,26 @@
 # Linux input identifier
 
-Easy `/proc/bus/input/devices` reader
+Easy `/proc/bus/input/devices` reader for node.
+
+# Install
+
+`npm install linux-input-devices`
 
 # Example
 
 ```js
-const inputDevices = require("./index.js");
+const inputDevices = require("linux-input-devices");
 
 inputDevices.getDevices().then((devices) => {
     console.log(devices);
 });
 
-inputDevices.get('handlers', 'event0').then((devices) => {
-    console.log(devices);
+inputDevices.get('handlers', 'event0').then((device) => {
+    console.log(device);
+});
+
+inputDevices.get('name', 'Power').then((device) => {
+    console.log(device);
 });
 ```
 
